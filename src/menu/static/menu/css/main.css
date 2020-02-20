@@ -1,3 +1,19 @@
 body {
-    color: darkgoldenrod;
+    height: 1000px;
+}
+
+section {
+    background-color: chocolate;
+    margin-top: ;
+    height: 300px;
+}
+
+footer {
+    background-color: darkolivegreen;
+    padding: 10px;
+}
+
+footer div div div{
+    text-align: center;
+    padding: ;
 }
