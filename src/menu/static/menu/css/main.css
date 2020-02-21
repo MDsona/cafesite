@@ -1,19 +1,32 @@
+
+/* @font-face {
+    font-family: 'El Messiri';
+    src: url('../fonts/ElMessiri-Regular.ttf') format('truetype'),
+        local('El Messiri'); */
+
+html {
+    direction: ;
+}
+
 body {
+    font-family: 'El Messiri', 'sans-serif';
     height: 1000px;
+}
+
+nav {
+    
 }
 
 section {
     background-color: chocolate;
-    margin-top: ;
+    margin-top: 100px;
     height: 300px;
+    direction: ;
+
 }
 
 footer {
-    background-color: darkolivegreen;
+    background-color: darkgrey;
     padding: 10px;
-}
-
-footer div div div{
     text-align: center;
-    padding: ;
 }
