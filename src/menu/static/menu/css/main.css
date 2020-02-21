@@ -13,20 +13,29 @@ body {
     height: 1000px;
 }
 
-nav {
-    
+.bgimg {
+    -webkit-filter: grayscale(10%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(7%);
+    background-image: url(../images/coffee-shop-interior-design.jpg);
+    height: 100%;
+    /* max-width: 100%; */
+    margin: 0;
+    padding: 0;
+    margin-left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 section {
-    background-color: chocolate;
-    margin-top: 100px;
-    height: 300px;
-    direction: ;
-
+    background-color: #444444;
+    color: lightgrey;
+    padding: 20px 0;
 }
 
 footer {
-    background-color: darkgrey;
+    background-color: #333333;
+    color: lightgrey;
     padding: 10px;
     text-align: center;
 }
