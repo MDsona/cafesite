@@ -5,7 +5,7 @@ from django.shortcuts import render
 def home(request):                                      # 1b
 
     context = {
-        'title': 'home'                                 # 1b
+        'page_title': 'الرئيسية'                       # 1b>1e
     }
 
     return render(request, 'menu/index.html', context)
