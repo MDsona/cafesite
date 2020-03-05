@@ -39,3 +39,11 @@ footer {
     padding: 10px;
     text-align: center;
 }
+
+/* start menu box (m\index.html) */
+
+.menu_ty, .menu_co {
+    display: none;
+}
+
+/* end menu box */
