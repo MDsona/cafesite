@@ -1,0 +1,12 @@
+{% extends 'menu/base.html' %}      <!--a-->
+{% load static %}                   
+
+{% block content %}                 <!--a-->
+
+<div>{{m_title.title}}</div>
+
+{% for m_type in m_types %}         <!--b-->
+<div>{{m_type.the_type}}</div>
+{% endfor %}
+
+{% endblock %}

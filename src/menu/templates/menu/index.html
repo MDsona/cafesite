@@ -33,16 +33,12 @@
     <div class="row">
         <div class="col-md">
             {% for m_title in menu_titles %}
-            <div class="menu_ti">{{m_title.title}}</div>
+            <h3 class="menu_ti"><a href="{% url 'm_type_url' m_title.id %}">{{m_title.title}}</a></h3>
             {% endfor %}
         </div>
     </div>
     <div class="row">
         <div class="col-md">
-            <div class="menu_ty">cold</div>
-        </div>
-        <div class="col-md">
-            <div class="menu_ty">hot</div>
         </div>
     </div>
     <div class="row">
