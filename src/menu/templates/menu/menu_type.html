@@ -3,10 +3,24 @@
 
 {% block content %}                 <!--a-->
 
-<div>{{m_title.title}}</div>
+<div class="main_menu">         <!--d-->
+    <div class="filter">
 
-{% for m_type in m_types %}         <!--b-->
-<div>{{m_type.the_type}}</div>
-{% endfor %}
+    {% for me_title in me_titles %}     <!--c-->
+    <span><a href="{% url 'm_type_url' me_title.id %}">{{me_title.title}}</a></span>
+    {% endfor %}
+
+    <div>{{m_title.title}}</div>
+<div class="row">
+    <div class="col-md">
+    {% for m_type in m_types %}         <!--b-->
+    <span>{{m_type.the_type}}</span>
+    {% endfor %}
+    </div>
+</div>
+
+    </div>
+</div>
+
 
 {% endblock %}

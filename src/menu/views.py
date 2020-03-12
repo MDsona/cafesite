@@ -18,11 +18,13 @@ def home(request):                                      # 1b,
 def menu_type(request, titleID):                       # 7a
     title = get_object_or_404(MenuTitle, pk=titleID)
     m_types = MenuType.objects.filter(title_id = titleID)   # 7c
+    me_titles = MenuTitle.objects.all()
 
     context = {
         'page_title': 'القائمة',
         'm_title': title,
         'm_types': m_types,                                 # 7c
+        'me_titles': me_titles,
     }
 
     return render(request, 'menu/menu_type.html', context)
