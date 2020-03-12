@@ -15,3 +15,15 @@ class MenuType(models.Model):                   # 6a
 
     def __str__(self):                          # 6c
         return self.the_type
+
+
+class MenuContent(models.Model):                               # 9a
+    content = models.CharField(max_length=150)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    active = models.BooleanField(default=True)
+    conOFtype = models.ForeignKey(MenuType, on_delete=models.CASCADE, related_name='con_of_type')
+
+    def __str__(self):
+        return ' {} --> {} '.format(self.content, self.conOFtype)
+
+
