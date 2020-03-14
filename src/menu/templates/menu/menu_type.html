@@ -13,8 +13,11 @@
     <div>{{m_title.title}}</div>
 <div class="row">
     <div class="col-md">
-    {% for m_type in m_types %}         <!--b-->
+    <!-- c {# for m_type in m_types #}        -- b
     <span><a href="#">{{m_type.the_type}}</a></span>
+    {# endfor #} -->
+    {% for type in types.title_type_releted.all %}      <!--c-->
+    <span><a href="{% url 'm_content_url' type.title_id type.pk %}">{{type.the_type}}</a></span>
     {% endfor %}
     </div>
 </div>

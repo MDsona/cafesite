@@ -15,16 +15,20 @@ def home(request):                                      # 1b,
     return render(request, 'menu/index.html', context)
 
 
-def menu_type(request, titleID):                       # 7a
-    title = get_object_or_404(MenuTitle, pk=titleID)
-    m_types = MenuType.objects.filter(title_id = titleID)   # 7c
+def menu_type(request, titleID):                       # 7a 
+    # title = get_object_or_404(MenuTitle, pk=titleID)
+    # >< m_types = MenuType.objects.filter(title_id = titleID)   # 7c
     me_titles = MenuTitle.objects.all()
+
+    types = get_object_or_404(MenuTitle, pk=titleID)            # 7d
 
     context = {
         'page_title': 'القائمة',
-        'm_title': title,
-        'm_types': m_types,                                 # 7c
+        # 'm_title': title,
+        # >< 'm_types': m_types,                                 # 7c
         'me_titles': me_titles,
+
+        'types': types                                          # 7d
     }
 
     return render(request, 'menu/menu_type.html', context)
@@ -42,15 +46,19 @@ def open_menu(request):                                     # 8a
 
 
 def menu_content(request, titleID, typeID):                          # 10a
-    # 9c content_m = MenuContent.objects.all()
-    contents = get_object_or_404(MenuType, title_id=titleID, pk= typeID)  # or (, title__pk=,) 9c
+    # 10c content_m = MenuContent.objects.all()
+    contents = get_object_or_404(MenuType, title_id=titleID, pk= typeID)  # or (, title__pk=,) 10c
     titles = MenuTitle.objects.all()
+
+    conTypes = MenuType.objects.filter(title_id=titleID)            # 10d
 
     context = {
         'page_title': 'محتوى القائمة',
-        # 9c 'content_m': content_m,
+        # 10c 'content_m': content_m,
         'contents': contents,                           # 10c
         'titles': titles,
+
+        'conTypes': conTypes                                        # 10d
     }
 
     return render(request, 'menu/menu_content.html', context)
