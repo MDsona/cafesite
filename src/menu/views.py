@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404  # 7a(404)
 
-from .models import MenuTitle, MenuType                           # 3a
+from .models import MenuTitle, MenuType, MenuContent        # 3a
 
 # Create your views here.
 
@@ -39,4 +39,22 @@ def open_menu(request):                                     # 8a
     }
 
     return render(request, 'menu/open_menu.html', context)
+
+
+def menu_content(request, titleID, typeID):                          # 10a
+    # 9c content_m = MenuContent.objects.all()
+    contents = get_object_or_404(MenuType, title_id=titleID, pk= typeID)  # or (, title__pk=,) 9c
+    titles = MenuTitle.objects.all()
+
+    context = {
+        'page_title': 'محتوى القائمة',
+        # 9c 'content_m': content_m,
+        'contents': contents,                           # 10c
+        'titles': titles,
+    }
+
+    return render(request, 'menu/menu_content.html', context)
+
+
+
 

@@ -1,0 +1,26 @@
+{% extends 'menu/base.html' %}      <!--a-->
+{% load static %}                   
+
+{% block content %}                 <!--a-->
+
+<div class="main_menu">         <!--a-->
+    <div class="filter">
+
+    <!-- b {# for content in content_m #}
+    <div>{{ content.content }}</div>
+    {# endfor #} -->
+
+    {% for title in titles %}                           <!--b-->
+    <span><a href="{% url 'm_type_url' title.id  %}">{{title.title}}</a></span>
+    {% endfor %}
+    
+
+    {% for content in contents.con_of_type.all %}          <!--b  contents.related_name MenuContent -->
+    <div>{{ content.content }}</div>
+    {% endfor %}
+
+    </div>
+</div>
+
+
+{% endblock %}

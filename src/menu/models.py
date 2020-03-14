@@ -20,7 +20,7 @@ class MenuType(models.Model):                   # 6a
 class MenuContent(models.Model):                               # 9a
     content = models.CharField(max_length=150)
     price = models.DecimalField(max_digits=5, decimal_places=2)
-    active = models.BooleanField(default=True)
+    # active = models.BooleanField(default=True)
     conOFtype = models.ForeignKey(MenuType, on_delete=models.CASCADE, related_name='con_of_type')
 
     def __str__(self):
