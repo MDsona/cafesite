@@ -4,13 +4,15 @@
 
 {% block content %}               <!--a-->
 
-<div class="main_menu">         <!--a-->
+<div class="main_menu text-center">         <!--a-->
     <div class="filter">
-        <h2>menu</h2>
+        <h2 class="pt-1">القائمة <i class="fas fa-utensils"></i></h2>
         <div class="row">
             <div class="col-md">
                 {% for m_title in menu_titles %}
-                <span class="menu_ti"><a href="{% url 'm_type_url' m_title.id %}">{{m_title.title}}</a></span>
+                <span class="menu_title">
+                    <a href="{% url 'm_type_url' m_title.id %}">{{m_title.title}}</a>
+                </span>
                 {% endfor %}
             </div>
         </div>

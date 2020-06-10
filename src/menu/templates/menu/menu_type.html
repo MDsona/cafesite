@@ -3,24 +3,25 @@
 
 {% block content %}                 <!--a-->
 
-<div class="main_menu">         <!--d-->
+<div class="main_menu text-center">         <!--d-->
     <div class="filter">
+        <h2 class="pt-1">القائمة <i class="fas fa-utensils"></i></h2>
 
-    {% for me_title in me_titles %}     <!--c-->
-    <span><a href="{% url 'm_type_url' me_title.id %}">{{me_title.title}}</a></span>
-    {% endfor %}
+        {% for me_title in me_titles %}     <!--c-->
+        <span class="menu_title"><a href="{% url 'm_type_url' me_title.id %}">{{me_title.title}}</a></span>
+        {% endfor %}
 
-    <div>{{m_title.title}}</div>
-<div class="row">
-    <div class="col-md">
-    <!-- c {# for m_type in m_types #}        -- b
-    <span><a href="#">{{m_type.the_type}}</a></span>
-    {# endfor #} -->
-    {% for type in types.title_type_releted.all %}      <!--c-->
-    <span><a href="{% url 'm_content_url' type.title_id type.pk %}">{{type.the_type}}</a></span>
-    {% endfor %}
-    </div>
-</div>
+        <!-- <div>{{m_title.title}}</div> -->
+        <div class="row">
+            <div class="col-md">
+            <!-- c {# for m_type in m_types #}        -- b
+            <span><a href="#">{{m_type.the_type}}</a></span>
+            {# endfor #} -->
+            {% for type in types.title_type_releted.all %}      <!--c-->
+            <span class="menu_type"><a href="{% url 'm_content_url' type.title_id type.pk %}">{{type.the_type}}</a></span>
+            {% endfor %}
+            </div>
+        </div>
 
     </div>
 </div>
