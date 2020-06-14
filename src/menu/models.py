@@ -27,3 +27,11 @@ class MenuContent(models.Model):                               # 9a
         return ' {} --> {} '.format(self.content, self.conOFtype)
 
 
+class MapBox(models.Model):                                 # 12a
+    mapURL = models.URLField(max_length=500)                # 12a
+
+    def __str__(self):                                      # 12a
+        return self.mapURL
+
+
+

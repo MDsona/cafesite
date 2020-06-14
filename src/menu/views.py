@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404  # 7a(404)
 
-from .models import MenuTitle, MenuType, MenuContent        # 3a
+from .models import MenuTitle, MenuType, MenuContent, MapBox        # 3a, , , 12c
 
 # Create your views here.
 
@@ -66,8 +66,12 @@ def menu_content(request, titleID, typeID):                          # 10a
 
 def open_map(request):                                              # 11a
 
+    map_url = MapBox.objects.all()                                  # 12c
+
     context = {
-        'page_title': 'العنوان'
+        'page_title': 'العنوان',                                     # a11 
+        'map_urls': map_url,                                          # 12c
+
     }
 
     return render(request, 'menu/open_map.html', context)
