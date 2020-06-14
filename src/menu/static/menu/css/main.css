@@ -53,8 +53,8 @@ nav {
     padding-bottom: 35px */
 }
 
-.bg_img .main_menu {
-    padding-top: 180px;
+.bg_img .main_menu, .bg_img .map_img_box {
+    padding-top: 100px;
 }
 
 /* section {
@@ -84,7 +84,7 @@ footer {
 
 /* start menu box (open_menu.html, menu_type.html, menu_content.html) */
 
-.main_menu div h2 {
+.main_menu div h2, .map_img_box div h2 {
     background-color: #182a38;
     color: rgba(255,255,255,.5);
     border-bottom: 3px solid rgba(255,255,255,.5);
@@ -111,6 +111,27 @@ footer {
 }
 
 /* end menu box */
+
+
+/* start map_img_box ( open_map.html ) */
+
+.map_img_box .map_img {
+    width: 700px;
+    margin: 10px;
+}
+
+.map_img_box div a {
+    color: rgba(255, 255, 255, .5);
+    font-size: 20px;
+}
+
+.map_img_box div a:hover {
+    color: rgba(255, 255, 255, .8);
+
+}
+
+/* end map_img_box */
+
 
 /* ###
 

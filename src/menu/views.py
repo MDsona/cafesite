@@ -64,5 +64,11 @@ def menu_content(request, titleID, typeID):                          # 10a
     return render(request, 'menu/menu_content.html', context)
 
 
+def open_map(request):                                              # 11a
 
+    context = {
+        'page_title': 'العنوان'
+    }
+
+    return render(request, 'menu/open_map.html', context)
 
