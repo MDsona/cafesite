@@ -29,6 +29,7 @@ class MenuContent(models.Model):                               # 9a
 
 class MapBox(models.Model):                                 # 12a
     mapURL = models.URLField(max_length=500)                # 12a
+    mapIMG = models.ImageField(default='default.jpg', upload_to='map_imgs')  # 13a
 
     def __str__(self):                                      # 12a
         return self.mapURL
