@@ -7,12 +7,13 @@
 <div class="map_img_box text-center">         <!--a-->
     <div class="filter">
         <h2 class="pt-1">العنوان <i class="fas fa-map-marker-alt"></i></h2>
-        <img class="map_img img-fluid" alt="الخريطة" src="../../static/menu/images/map-drone.jpg">
+        <!-- c <img class="map_img img-fluid" alt="الخريطة" src="../../static/menu/images/map-drone.jpg"> -->
         <!-- b <div><a href="https://g.page/meddcoffee?share" target="_blank">
             انقر للذهاب إلى الخريطة</a></div> b -->
 
         {% for map_url in map_urls %}                           <!--b-->
-        <div><a href="{{map_url.mapURL}}" target="_blank">انقر للذهاب إلى الخريطة</a></div>
+        <img class="map_img img-fluid" src="{{map_url.mapIMG.url}}" alt="الخريطة">  <!--c {{views.model.url}} -->
+        <div><a href="{{map_url.mapURL}}" target="_blank">انقر للذهاب إلى الخريطة</a></div> <!--b-->
         {% endfor %}
     </div>
 </div>

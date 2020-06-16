@@ -66,7 +66,8 @@ def menu_content(request, titleID, typeID):                          # 10a
 
 def open_map(request):                                              # 11a
 
-    map_url = MapBox.objects.all()                                  # 12c
+    # d map_url = MapBox.objects.all()                              # 12c
+    map_url = MapBox.objects.filter(mapActive=True)                 # 13d
 
     context = {
         'page_title': 'العنوان',                                     # a11 
