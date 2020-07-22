@@ -77,3 +77,10 @@ def open_map(request):                                              # 11a
 
     return render(request, 'menu/open_map.html', context)
 
+
+def for_reservations(request):                                          # 14a
+
+    return render(request, 'menu/for_reser.html')                       # 14a
+
+
+

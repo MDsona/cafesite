@@ -1,0 +1,57 @@
+
+{% extends 'menu/base.html' %}    <!--a-->
+{% load static %}
+
+{% block content %}               <!--a-->
+
+<div class="for_reser_box text-center">         <!--a-->
+    <div class="filter">
+        <h2 class="pt-1">حجز جلسة <i class="fas fa-bookmark"></i></h2>
+        <div class="p-3">
+            <div class="row">
+                <div class="col-md">
+                    <!-- <form action="">
+                        <label for="in2">جلسة داخلية - مقعدين</label>
+                        <input type="checkbox" id="" name="in2" value="in2"><br>
+                        <label for="in3">جلسة داخلية - 3 مقاعد</label>
+                        <input type="checkbox" id="" name="in3" value="in3"><br>
+                        <label for="out2">جلسة خارجية - مقعدين</label>
+                        <input type="checkbox" id="" name="out2" value="out2"><br>
+                        <label for="privet2">جلسة خاصة مغلقة - مقعدين</label>
+                        <input type="checkbox" id="" name="privet2" value="privet2"><br>
+                        <input type="datetime-local">
+                        <input type="submit" value="موافق">
+                    </form> -->
+                
+                    <label for="reser_type">اختر نوع الجلسة</label>
+                    <select id="reser_type">
+                        <option value="in">جلسة داخلية</option>
+                        <option value="out">جلسة خارجية</option>
+                        <option value="privet">جلسة خاصة مغلقة</option>
+                    </select>
+              
+                    <label for="num_people">عدد المقاعد</label>
+                    <select id="num_people">
+                        <option value="2">مقعدين</option>
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                    </select>
+                
+                    <label for="duration">مدة الجلسة (ساعة)</label>
+                    <input type="number" name="duration">
+
+                    <label for="time">التاريخ والوقت</label>
+                    <input type="datetime-local" name="time">
+
+                    <label for="phon_num">رقم الجوال</label>
+                    <input type="text" name="phon_num">
+                
+                    <input type="submit" value="موافق">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

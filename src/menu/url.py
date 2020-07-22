@@ -10,5 +10,6 @@ urlpatterns = [
     path('menu/<int:titleID>/', views.menu_type, name= 'm_type_url'),  # 7b
     path('menu/<int:titleID>/content/<int:typeID>/', views.menu_content, name= 'm_content_url'), # 10b
     path('map', views.open_map, name= 'open_map_url'),              # 11b
+    path('for_reservations', views.for_reservations, name= 'for_reser_url'),              # 14b
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)    # 13c
