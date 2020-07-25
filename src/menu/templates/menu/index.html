@@ -3,6 +3,18 @@
 
 {% block content %}               <!--a-->
 
+{% if messages %}                       <!--c-->
+{% for message in messages %}
+<div class="main_menu text-center">
+    <div class="filter">
+        <div class="alert alert-{{message.tags}}">
+            {{message}}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+
 <!--   b
 <div class="menu_box text-center">  
     <h2>menu</h2>
