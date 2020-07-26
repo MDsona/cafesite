@@ -48,3 +48,9 @@ def login_user(request):                                            # 16b
     })
 
 
+def logout_user(request):                                           # 17a
+    logout(request)
+
+    return render(request, 'user/logout.html', {
+        'page_title': 'تسجيل الخروج',
+    })
