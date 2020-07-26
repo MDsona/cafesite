@@ -26,3 +26,12 @@ class NewUserForm(forms.ModelForm):                         # 15a
         return cd['username']
 
 
+class LoginForm(forms.ModelForm):                                           # 16a
+    username = forms.CharField(label='اسم المستخدم')
+    password = forms.CharField(label='كلمة المرور', widget= forms.PasswordInput())
+    class Meta:
+        model = User
+        fields = ('username', 'password')
+
+
+
