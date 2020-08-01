@@ -24,6 +24,7 @@ def register(request):                                      # 15b
 
     return render(request, 'user/register.html', {          # 15b
         'form': form,
+        'page_title': 'تسجيل جديد',
     })
 
 

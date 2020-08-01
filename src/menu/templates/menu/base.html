@@ -37,15 +37,16 @@
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top"> <!--bg-dark-->
           <div class="container">
           <a class="navbar-brand" href="{% url 'home_url' %}">MDcafe</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
         
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
+            <ul class="navbar-nav ml-auto"> <!-- mr-auto -->
+              <!-- <li class="nav-item active">
                 <a class="nav-link" href="{% url 'home_url' %}">الرئيسية <span class="sr-only">(current)</span></a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'open_menu_url' %}">ماذا نقدم؟</a>
               </li>
@@ -53,9 +54,26 @@
                   <a class="nav-link" href="{% url 'open_map_url' %}">العنوان</a>
               </li>
             </ul>
-            <div class="">
+
+            <!-- <div class="m_l">
                   <a class="nav-link" href="{% url 'register_url' %}">تسجيل</a>
+            </div> -->
+
+            <div class="">
+              <a class="nav-link" href="{% url 'for_reser_url' %}">للحجز</a>
             </div>
+
+            {% if user.is_authenticated %}
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="{% url 'logout_url' %}">تسجيل خروج</a></li>
+            </ul>
+            {% else %}
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="{% url 'register_url' %}">للتسجيل</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'login_url' %}">تسجيل دخول</a></li>
+            </ul>
+            {% endif %}
+            
           </div>
       </div>
       </nav>
