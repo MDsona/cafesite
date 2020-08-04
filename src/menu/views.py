@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404  # 7a(404)
 
 from .models import MenuTitle, MenuType, MenuContent, MapBox        # 3a, , , 12c
+from .forms import ForReserForm                                     # 20b
 
 # Create your views here.
 
@@ -78,9 +79,15 @@ def open_map(request):                                              # 11a
     return render(request, 'menu/open_map.html', context)
 
 
-def for_reservations(request):                                          # 14a
+#  # 20c - function based views
 
-    return render(request, 'menu/for_reser.html')                       # 14a
+# def for_reservations(request):                                          # 14a    
+#     form = ForReserForm()                                               # 20b    
+#     context = {
+#         'page_title': 'حجز جلسة',
+#         'form': form,
+#     }
+#     return render(request, 'menu/for_reser.html', context)                       # 14a
 
 
 
