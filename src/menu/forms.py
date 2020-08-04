@@ -10,5 +10,5 @@ class ForReserForm(forms.ModelForm):                                    # 20a
     
     class Meta:                                                         # 20a
         model = ForReser
-        fields = '__all__'
+        fields = fields = ['session_type', 'number_of_seats', 'session_duration', 'session_date', 'mobile_number'] # '__all__'
 

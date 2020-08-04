@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404  # 7a(404)
 
-from .models import MenuTitle, MenuType, MenuContent, MapBox        # 3a, , , 12c
+from .models import MenuTitle, MenuType, MenuContent, MapBox, ForReser   # 3a, , , 12c, 21a
 from .forms import ForReserForm                                     # 20b
+from django.views.generic import CreateView                              # 21a
+from django.contrib.auth.mixins import LoginRequiredMixin  #21e
 
 # Create your views here.
 
@@ -90,4 +92,14 @@ def open_map(request):                                              # 11a
 #     return render(request, 'menu/for_reser.html', context)                       # 14a
 
 
+
+class ForReserCreatView(LoginRequiredMixin, CreateView):       # (21e, 21a)
+    model = ForReser
+    # 21d fields = ['session_duration', 'session_date']
+    template_name = 'menu/for_reser.html'
+    form_class = ForReserForm   # 21d
+
+    def form_valid(self, form):                                         # 21c
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
