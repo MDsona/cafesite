@@ -50,11 +50,13 @@
                 
                     <input type="submit" value="موافق"> -->
                 
+                    <form method="POST">
                     {% csrf_token %}                                <!--b-->
 
                     {{form|crispy}}
 
                     <input class="btn btn-secondary mt-3" type="submit" value="موافق">
+                    </form>
                 
                 </div>
             </div>

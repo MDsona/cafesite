@@ -103,3 +103,13 @@ class ForReserCreatView(LoginRequiredMixin, CreateView):       # (21e, 21a)
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+
+def reser_detail(request, reserID):    # 22a
+    reser = get_object_or_404(ForReser, pk=reserID)
+
+    context = {
+        'page_title': 'تفاصيل الحجز',
+        'reser': reser,
+    }
+
+    return render(request, 'menu/reser_detail.html', context)

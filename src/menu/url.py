@@ -13,5 +13,6 @@ urlpatterns = [
     path('map/', views.open_map, name= 'open_map_url'),              # 11b
     # 21b path('for_reservations', views.for_reservations, name= 'for_reser_url'),    # 14b
     path('for_reservations/', ForReserCreatView.as_view(), name= 'for_reser_url'),    # 21b
+    path('for_reservations_detail/<int:reserID>/', views.reser_detail, name= 'reser_detail_url')  # 22b
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)    # 13c
