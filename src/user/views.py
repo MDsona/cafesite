@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect       #, 15f
 from .forms import NewUserForm, LoginForm                              # 15b, 16b
 from django.contrib import messages                 # 15f
 from django.contrib.auth import authenticate, login, logout            # 16d
+from menu.models import ForReser                                       # 23a
+from django.contrib.auth.decorators import login_required              # 23c
 
 # Create your views here.
 
@@ -55,3 +57,15 @@ def logout_user(request):                                           # 17a
     return render(request, 'user/logout.html', {
         'page_title': 'تسجيل الخروج',
     })
+
+
+@login_required(login_url='login_url')                              # 23c
+def profile(request):                                               # 23a
+    resers = ForReser.objects.filter(author=request.user)
+    
+    return render(request, 'user/profile.html', {
+        'page_title': 'الملف الشخصي',
+        'resers': resers,
+    })
+
+

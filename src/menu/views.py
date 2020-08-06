@@ -4,6 +4,7 @@ from .models import MenuTitle, MenuType, MenuContent, MapBox, ForReser   # 3a, ,
 from .forms import ForReserForm                                     # 20b
 from django.views.generic import CreateView                              # 21a
 from django.contrib.auth.mixins import LoginRequiredMixin  #21e
+from django.contrib.auth.decorators import login_required               # 23c
 
 # Create your views here.
 
@@ -104,6 +105,7 @@ class ForReserCreatView(LoginRequiredMixin, CreateView):       # (21e, 21a)
         return super().form_valid(form)
 
 
+@login_required(login_url='login_url')                                  # 23c
 def reser_detail(request, reserID):    # 22a
     reser = get_object_or_404(ForReser, pk=reserID)
 

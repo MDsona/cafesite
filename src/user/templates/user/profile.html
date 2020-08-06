@@ -1,0 +1,26 @@
+
+{% extends 'menu/base.html' %}          <!--a-->      
+{% load static %}
+
+{% block content %}                     
+
+<div class="main_menu text-center">                                         <!--a-->
+    <div class="filter">
+        <h2 class="pt-1">الملف الشخصي<i class="fas fa-utensils"></i></h2>
+
+        <div>{{user.username}}</div>
+        <div>{{user.first_name}} {{user.last_name}}</div>
+        <div>{{user.email}}</div>
+
+        <h3>حجوزاتي</h3>
+        <div>{{resers.count}}</div>
+        {% for reser in resers %}
+        <span><a href="{% url 'reser_detail_url' reser.id %}">{{reser.id}}</a></span>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock content %}
+
+
