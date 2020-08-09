@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect       #, 15f
 
-from .forms import NewUserForm, LoginForm                              # 15b, 16b
+from .forms import NewUserForm, LoginForm, ProfileUpdateForm      # 15b, 16b, 24b
 from django.contrib import messages                 # 15f
 from django.contrib.auth import authenticate, login, logout            # 16d
 from menu.models import ForReser                                       # 23a
@@ -66,6 +66,26 @@ def profile(request):                                               # 23a
     return render(request, 'user/profile.html', {
         'page_title': 'الملف الشخصي',
         'resers': resers,
+    })
+
+
+@login_required(login_url='login_url')                                      # 24d
+def profile_update(request):                                                # 24b
+
+    # 24d pu_form =ProfileUpdateForm(instance=request.user)
+
+    if request.method == 'POST':                                            # 24d
+        pu_form = ProfileUpdateForm(request.POST, instance=request.user)
+        if pu_form.is_valid:
+            pu_form.save()
+            messages.success(request, 'تم تحديث الملف الشخصي بنجاح')
+            return redirect('profile_url')
+    else:
+        pu_form = ProfileUpdateForm(instance=request.user)
+
+    return render(request, 'user/profile_update.html', {                    # 24b
+        'page_title': 'تحديث الملف الشخصي',
+        'pu_form': pu_form,
     })
 
 

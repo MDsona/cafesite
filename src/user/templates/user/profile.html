@@ -8,6 +8,14 @@
     <div class="filter">
         <h2 class="pt-1">الملف الشخصي<i class="fas fa-utensils"></i></h2>
 
+        {% if messages %}                                                       <!--b-->
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">
+            {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}
+
         <div>{{user.username}}</div>
         <div>{{user.first_name}} {{user.last_name}}</div>
         <div>{{user.email}}</div>
@@ -17,6 +25,8 @@
         {% for reser in resers %}
         <span><a href="{% url 'reser_detail_url' reser.id %}">{{reser.id}}</a></span>
         {% endfor %}
+
+        <div><a href="{% url 'profile_update_url' %}">تحديث</a></div>   <!--b-->
 
     </div>
 </div>
