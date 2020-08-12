@@ -4,15 +4,15 @@ $(document).ready(function() {
 
     //------ start menu box ------//
 
-    $('.menu_ti').click(function () {
+    // $('.menu_ti').click(function () {
 
-        $('.menu_ty').slideToggle()
-    });
+    //     $('.menu_ty').slideToggle()
+    // });
 
-    $('.menu_ty').click(function () {
+    // $('.menu_ty').click(function () {
 
-        $('.menu_co').slideToggle()
-    });
+    //     $('.menu_co').slideToggle()
+    // });
 
     // $('.scroll').click(function () {
     //     $('html, body').animate({
