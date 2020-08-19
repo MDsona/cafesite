@@ -10,9 +10,9 @@
         <div class="row">
             <div class="col-md">
                 {% for m_title in menu_titles %}
-                <span class="menu_title">
+                <div class="menu_title">
                     <a href="{% url 'm_type_url' m_title.id %}">{{m_title.title}}</a>
-                </span>
+                </div>
                 {% endfor %}
             </div>
         </div>

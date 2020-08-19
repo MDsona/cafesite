@@ -8,7 +8,7 @@
         <h2 class="pt-1">القائمة <i class="fas fa-utensils"></i></h2>
 
         {% for me_title in me_titles %}     <!--c-->
-        <span class="menu_title"><a href="{% url 'm_type_url' me_title.id %}">{{me_title.title}}</a></span>
+        <div class="menu_title"><a href="{% url 'm_type_url' me_title.id %}">{{me_title.title}}</a></div>
         {% endfor %}
 
         <!-- <div>{{m_title.title}}</div> -->
@@ -18,7 +18,7 @@
             <span><a href="#">{{m_type.the_type}}</a></span>
             {# endfor #} -->
             {% for type in types.title_type_releted.all %}      <!--c-->
-            <span class="menu_type"><a href="{% url 'm_content_url' type.title_id type.pk %}">{{type.the_type}}</a></span>
+            <div class="menu_type"><a href="{% url 'm_content_url' type.title_id type.pk %}">{{type.the_type}}</a></div>
             {% endfor %}
             </div>
         </div>

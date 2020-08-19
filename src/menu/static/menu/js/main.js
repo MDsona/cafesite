@@ -26,4 +26,20 @@ $(document).ready(function() {
 
     //------ end menu box ------//
 
+
+
+
+    // navbar active link
+
+    $('.navbar div div a').click(function() {
+        $(this).addClass('active');
+    });
+
+    // menu active link
+
+    $('.main_box .menu_title, .main_box .menu_type').click(function() {
+        $(this).addClass('active')
+    });
+
+
 });

@@ -12,13 +12,13 @@
         {# endfor #} -->
 
         {% for title in titles %}                           <!--b-->
-        <span class="menu_title"><a href="{% url 'm_type_url' title.id  %}">{{title.title}}</a></span>
+        <div class="menu_title"><a href="{% url 'm_type_url' title.id  %}">{{title.title}}</a></div>
         {% endfor %}
 
         <div class="row">
             <div class="col-md">
             {% for conType in conTypes %}                           <!--c-->
-            <span class="menu_type"><a href="{% url 'm_content_url' conType.title_id conType.pk %}">{{conType.the_type}}</a></span>
+            <div class="menu_type"><a href="{% url 'm_content_url' conType.title_id conType.pk %}">{{conType.the_type}}</a></div>
             {% endfor %}
             </div>
         </div>
@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md">
             {% for content in contents.con_of_type.all %}          <!--b  contents.related_name MenuContent -->
-            <span class="menu_content">{{ content.content }}</span><small>{{content.price}} ريال</small>
+            <div class="menu_content">{{ content.content }} <small>{{content.price}} ريال</small></div>
             {% endfor %}
             </div>
         </div>

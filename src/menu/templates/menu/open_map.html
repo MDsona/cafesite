@@ -13,7 +13,7 @@
 
         {% for map_url in map_urls %}                           <!--b-->
         <img class="map_img img-fluid" src="{{map_url.mapIMG.url}}" alt="الخريطة">  <!--c {{views.model.url}} -->
-        <div><a href="{{map_url.mapURL}}" target="_blank">انقر للذهاب إلى الخريطة</a></div> <!--b-->
+        <div class="map_url"><a href="{{map_url.mapURL}}" target="_blank">انقر هنا للذهاب إلى الخريطة</a></div> <!--b-->
         {% endfor %}
     </div>
 </div>
