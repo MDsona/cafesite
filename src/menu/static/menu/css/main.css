@@ -108,6 +108,20 @@ footer {
     border-bottom: 3px solid rgba(255,255,255,.5);
 }
 
+.main_box .submit_btn {
+    background-color: rgba(49, 126, 82, 0.993);
+    color: #FFF;
+    padding: 8px;
+    border: 1px solid rgba(49, 126, 82, 0.993);
+    cursor: pointer;
+    margin-top: 5px;
+}
+.main_box .submit_btn:hover {
+    background-color: #182a38;
+    color: rgba(255, 255, 255, .8);
+    border-color: rgba(255, 255, 255, .8);
+}
+
 /**** end general class ****/
 
 /* start menu box (open_menu.html, menu_type.html, menu_content.html) */
@@ -186,7 +200,25 @@ footer {
 /* end map_img_box */
 
 
+/* start for_reser.html */
 
+.main_box .f_reser_form .form-control {
+    border-radius: 0%;
+}
+.main_box .f_reser_form label{
+    font-size: 20px;
+}
+.main_box .f_reser_form small {
+    font-size: 17px;
+    color: rgba(255, 255, 255, .5);
+}
+
+.main_box .f_reser_form small.invalid {
+    font-size: 22px;
+    color: red;
+}
+
+/* end for reser */
 
 
 

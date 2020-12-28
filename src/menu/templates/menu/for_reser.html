@@ -2,6 +2,7 @@
 {% extends 'menu/base.html' %}    <!--a-->
 {% load static %}
 {% load crispy_forms_tags %}
+{% load widget_tweaks %}          <!--c-->
 
 {% block content %}               <!--a-->
 
@@ -9,22 +10,10 @@
     <div class="filter">
         <h2 class="pt-1">حجز جلسة <i class="fas fa-calendar-plus"></i></h2>
         <div class="p-3">
-            <div class="row">
-                <div class="col-md">
-                    <!-- <form action="">
-                        <label for="in2">جلسة داخلية - مقعدين</label>
-                        <input type="checkbox" id="" name="in2" value="in2"><br>
-                        <label for="in3">جلسة داخلية - 3 مقاعد</label>
-                        <input type="checkbox" id="" name="in3" value="in3"><br>
-                        <label for="out2">جلسة خارجية - مقعدين</label>
-                        <input type="checkbox" id="" name="out2" value="out2"><br>
-                        <label for="privet2">جلسة خاصة مغلقة - مقعدين</label>
-                        <input type="checkbox" id="" name="privet2" value="privet2"><br>
-                        <input type="datetime-local">
-                        <input type="submit" value="موافق">
-                    </form> -->
+            
+                <!-- <div class="form-group col-md">
                 
-                    <!-- <label for="reser_type">اختر نوع الجلسة</label>
+                   -- b <label for="reser_type">اختر نوع الجلسة</label> a
                     <select id="reser_type">
                         <option value="in">جلسة داخلية</option>
                         <option value="out">جلسة خارجية</option>
@@ -48,18 +37,58 @@
                     <label for="phon_num">رقم الجوال</label>
                     <input type="text" name="phon_num">
                 
-                    <input type="submit" value="موافق"> -->
+                    <input type="submit" value="موافق"> --
                 
-                    <form method="POST">
-                    {% csrf_token %}                                <!--b-->
+                   c <form method="POST" class="f_reser_form">   b--
+                    {% csrf_token %}                               
 
                     {{form|crispy}}
 
                     <input class="btn btn-secondary mt-3" type="submit" value="موافق">
                     </form>
                 
+                </div> -->
+            
+            <form method="POST" class="f_reser_form">   <!--c-->
+                    {% csrf_token %} 
+                <div class="form-group">                              
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>{% render_field form.session_type.label_tag %}</label>
+                            {% render_field form.session_type class="form-control" %}
+                        </div>
+                        <div class="col-md-4">
+                            <label>{% render_field form.number_of_seats.label_tag %}</label>
+                            {% render_field form.number_of_seats class="form-control" %}
+                        </div>
+                        <div class="col-md-4">
+                            <label>{% render_field form.session_duration.label_tag %}</label>
+                            {% render_field form.session_duration class="form-control" %}
+                            <div><small>{% render_field form.session_duration.help_text %}</small></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>{% render_field form.session_date.label_tag %}</label>
+                        {% render_field form.session_date class="form-control" %}
+                        <div><small>{% render_field form.session_date.help_text %}</small></div>
+                        <div><small class="invalid">{% render_field form.session_date.errors %}</small></div>
+                    </div>
+                    <div class="col-md-6">
+                        <label>{% render_field form.mobile_number.label_tag %}</label>
+                            {% render_field form.mobile_number class="form-control" %}
+                        <div><small>{% render_field form.mobile_number.help_text %}</small></div>
+                        <div><small class="invalid">{% render_field form.mobile_number.errors %}</small></div>
+                    </div>
+                </div>
+
+                    <!-- <input class="btn submit_btn mt-3" type="submit" value="موافق"> -->
+                    <button type="submit" class="submit_btn">موافق <i class="fas fa-calendar-check"></i></button>
+            </form>
+                
+            
+            
         </div>
     </div>
 </div>
