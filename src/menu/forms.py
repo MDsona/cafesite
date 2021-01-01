@@ -9,7 +9,7 @@ class ForReserForm(forms.ModelForm):                                    # 20a
     
     class Meta:                                                         # 20a
         model = ForReser
-        fields = ['session_type', 'number_of_seats', 'session_duration', 'session_date', 'mobile_number'] # '__all__'
+        fields = ['session_type', 'number_of_seats', 'session_duration', 'session_date', 'session_time', 'mobile_number'] # '__all__'
 
         # 26b widgets = {                                                     # 25a
         #     'session_type': forms.Select(attrs={'class': 'form-control'}),

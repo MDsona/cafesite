@@ -41,5 +41,8 @@ $(document).ready(function() {
         $(this).addClass('active')
     });
 
+    // date picker # 27c
+    $('.main_box .f_reser_form .dateinput').datepicker({changeYear: true, changeMonth: true});
+
 
 });

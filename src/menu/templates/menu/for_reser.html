@@ -69,13 +69,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label>{% render_field form.session_date.label_tag %}</label>
-                        {% render_field form.session_date class="form-control" %}
+                        {% render_field form.session_date class="form-control dateinput" %}
                         <div><small>{% render_field form.session_date.help_text %}</small></div>
                         <div><small class="invalid">{% render_field form.session_date.errors %}</small></div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <label>{% render_field form.session_time.label_tag %}</label>
+                        {% render_field form.session_time class="form-control" %}
+                        <div><small>{% render_field form.session_time.help_text %}</small></div>
+                        <div><small class="invalid">{% render_field form.session_time.errors %}</small></div>
+                    </div>
+                    <div class="col-md-4">
                         <label>{% render_field form.mobile_number.label_tag %}</label>
                             {% render_field form.mobile_number class="form-control" %}
                         <div><small>{% render_field form.mobile_number.help_text %}</small></div>
