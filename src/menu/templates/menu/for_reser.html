@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-md-4">
                         <label>{% render_field form.mobile_number.label_tag %}</label>
-                            {% render_field form.mobile_number class="form-control" %}
+                            {% render_field form.mobile_number minlength="10" class="form-control" %}
                         <div><small>{% render_field form.mobile_number.help_text %}</small></div>
                         <div><small class="invalid">{% render_field form.mobile_number.errors %}</small></div>
                     </div>

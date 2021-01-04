@@ -11,6 +11,11 @@ class ForReserForm(forms.ModelForm):                                    # 20a
         model = ForReser
         fields = ['session_type', 'number_of_seats', 'session_duration', 'session_date', 'session_time', 'mobile_number'] # '__all__'
 
+        widgets = {
+            'mobile_number': forms.TextInput(attrs={'pattern':'[0-9 ]+'}),
+            'session_duration': forms.TextInput(attrs={'pattern':'[1-8 ]+'}),
+        }
+
         # 26b widgets = {                                                     # 25a
         #     'session_type': forms.Select(attrs={'class': 'form-control'}),
         #     'number_of_seats': forms.Select(attrs={'class': 'form-control'}),

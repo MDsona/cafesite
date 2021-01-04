@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'user',
     'crispy_forms',
     'widget_tweaks',                # 26a
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [

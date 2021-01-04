@@ -4,6 +4,7 @@ from django.contrib.auth.models import User     #19d
 from django.utils import timezone
 from django.urls import reverse                 # 22c
 from datetime import datetime, date, time       # 27a
+# from phonenumber_field.modelfields import PhoneNumberField # 28a
 
 # Create your models here.
 
@@ -53,14 +54,16 @@ class NumberOFseats(models.Model):                          # 18b
 
 
 class ForReser(models.Model):                               # 19a>>
-    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, verbose_name='الاسم')  # d19d
-    session_type = models.ForeignKey(SessionType, on_delete=models.CASCADE, null=True, verbose_name='نوع الجلسة')  # a19a
-    number_of_seats = models.ForeignKey(NumberOFseats, on_delete=models.CASCADE, null=True, verbose_name='عدد المقاعد')
-    session_duration = models.FloatField(help_text='ساعة', null=True, verbose_name='مدة الجلسة')      # c19c
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False, verbose_name='الاسم')  # d19d
+    session_type = models.ForeignKey(SessionType, on_delete=models.CASCADE, null=False, blank=False, verbose_name='نوع الجلسة')  # a19a
+    number_of_seats = models.ForeignKey(NumberOFseats, on_delete=models.CASCADE, null=False, verbose_name='عدد المقاعد')
+    #session_duration = models.PositiveSmallIntegerField(help_text='ساعة', null=False, verbose_name='مدة الجلسة')      # c19c
+    session_duration = models.CharField(max_length=1, default='1', help_text='ساعة\ساعات', null=False, verbose_name='مدة الجلسة')      # c19c
     # 27a session_date = models.DateTimeField(null=True, help_text='صيغة التوقيت YYYY-MM-DD hh:mm:ss', verbose_name='التوقيت')
-    session_date = models.DateField(auto_now=False, null=True, verbose_name='التاريخ')      # 27a
-    session_time = models.TimeField(auto_now=False, null=True, verbose_name='التوقيت', help_text='مثال 18:05')      # 27d
-    mobile_number = models.CharField(max_length=10, help_text='مثال:0511111111', null=True, verbose_name='رقم الجوال')
+    session_date = models.DateField(auto_now=False, null=False, verbose_name='التاريخ')      # 27a
+    session_time = models.TimeField(auto_now=False, null=False, verbose_name='التوقيت', help_text='مثال 18:05')      # 27d
+    # mobile_number = PhoneNumberField(max_length=14, help_text='مثال:0511111111', null=False, verbose_name='رقم الجوال')  # 28a
+    mobile_number = models.CharField(max_length=10, default='05', help_text='مثال:0511111111', null=False, verbose_name='رقم الجوال')
     timestamp = models.DateTimeField(auto_now=True)             # 19d
 
     def __str__(self):                                          # 19e
@@ -70,6 +73,7 @@ class ForReser(models.Model):                               # 19a>>
         return reverse('reser_detail_url', args=[self.pk])
 
 
+# blank=True | not required
 
 
 
