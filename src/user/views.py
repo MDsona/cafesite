@@ -64,7 +64,7 @@ def profile(request):                                               # 23a
     resers = ForReser.objects.filter(author=request.user)
     
     return render(request, 'user/profile.html', {
-        'page_title': 'الملف الشخصي',
+        'page_title': 'الحساب',
         'resers': resers,
     })
 
@@ -78,13 +78,13 @@ def profile_update(request):                                                # 24
         pu_form = ProfileUpdateForm(request.POST, instance=request.user)
         if pu_form.is_valid:
             pu_form.save()
-            messages.success(request, 'تم تحديث الملف الشخصي بنجاح')
+            messages.success(request, 'تم تحديث الحساب بنجاح')
             return redirect('profile_url')
     else:
         pu_form = ProfileUpdateForm(instance=request.user)
 
     return render(request, 'user/profile_update.html', {                    # 24b
-        'page_title': 'تحديث الملف الشخصي',
+        'page_title': 'تحديث الحساب',
         'pu_form': pu_form,
     })
 

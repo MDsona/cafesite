@@ -8,13 +8,13 @@
 
 <div class="main_box text-center">                                         <!--a-->
     <div class="filter">
-        <h2 class="pt-1">تحديث الملف الشخصي<i class="fas fa-user-edit"></i></h2>
+        <h2 class="pt-1">تحديث الحساب<i class="fas fa-user-edit"></i></h2>
 
         <form method="POST">
             {% csrf_token %}
     
             {{pu_form|crispy}}
-            <input class="btn btn-secondary mt-3" type="submit" value="تحديث">
+            <button class="submit_btn mt-3" type="submit">موافق <i class="fas fa-user-check"></i></button>
         </form>
 
     </div>

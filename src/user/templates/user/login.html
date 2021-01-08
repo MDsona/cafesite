@@ -21,7 +21,8 @@
         {% csrf_token %}
 
         {{form|crispy}}
-        <input class="btn btn-secondary mt-3" type="submit" value="تسجيل الدخول">
+        <!-- <input class="submit_btn mt-3" type="submit" value="تسجيل الدخول"> -->
+        <button type="submit" class="submit_btn mt-3">موافق <i class="fas fa-sign-in-alt"></i></button>
     </form>
     </div>
 </div>

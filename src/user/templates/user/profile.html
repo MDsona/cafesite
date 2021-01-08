@@ -6,8 +6,7 @@
 
 <div class="main_box text-center">                                         <!--a-->
     <div class="filter">
-        <h2 class="pt-1">الملف الشخصي<i class="fas fa-address-card"></i></h2>
-
+        <h2 class="pt-1">الحساب <i class="fas fa-address-card"></i></h2>
         {% if messages %}                                                       <!--b-->
         {% for message in messages %}
         <div class="alert alert-{{message.tags}}">
@@ -16,17 +15,29 @@
         {% endfor %}
         {% endif %}
 
-        <div>{{user.username}}</div>
-        <div>{{user.first_name}} {{user.last_name}}</div>
-        <div>{{user.email}}</div>
+        <div class="row">
+            <div class="col-md">
+                <div>اسم المستخدم:  {{user.username}}</div>
+                <div>الاسم:  {{user.first_name}} {{user.last_name}}</div>
+                <div>البريد الإالكتروني:  {{user.email}}</div>
+                <div class="m-3"><a class="submit_btn" href="{% url 'profile_update_url' %}">تحديث  <i class="fas fa-user-edit"></i></a></div>   <!--b-->
+            </div>
+            <div class="col-md">
+                <h4>حجوزاتي : {{resers.count}}</h4>
+                {% for reser in resers %}
+                <div class="my_resers"><a href="{% url 'reser_detail_url' reser.id %}">{{reser.id}}</a></div>
+                {% endfor %}
+            </div>
+        </div>
 
-        <h3>حجوزاتي</h3>
-        <div>{{resers.count}}</div>
-        {% for reser in resers %}
-        <span><a href="{% url 'reser_detail_url' reser.id %}">{{reser.id}}</a></span>
-        {% endfor %}
+        
 
-        <div><a href="{% url 'profile_update_url' %}">تحديث</a></div>   <!--b-->
+        
+        
+
+        
+
+        
 
     </div>
 </div>
